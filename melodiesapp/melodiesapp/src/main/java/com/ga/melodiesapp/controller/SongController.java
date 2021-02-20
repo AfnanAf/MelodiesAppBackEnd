@@ -10,16 +10,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ga.melodiesapp.dao.SongDao;
+import com.ga.melodiesapp.dao.UserDao;
 import com.ga.melodiesapp.model.Song;
 
 @RestController
 public class SongController {
 	@Autowired
 	private SongDao dao;
+	
+	@Autowired
+	private UserDao userDao;
 
 	// HTTP POST REQUEST - Song Add
 	@PostMapping("/song/add")
 	public Song addSong(@RequestBody Song song) {
+		//userDao.findAllById(null)
 		dao.save(song);
 		return song;
 	}
@@ -48,9 +53,8 @@ public class SongController {
 
 	// HTTP GET REQUEST - Song Delete
 	@DeleteMapping("/song/delete")
-	public Song deleteSong(@RequestParam int id) {
-		Song song = dao.findById(id);
+	public boolean deleteSong(@RequestParam int id) {
 		dao.deleteById(id);
-		return song;
+		return true;
 	}
 }

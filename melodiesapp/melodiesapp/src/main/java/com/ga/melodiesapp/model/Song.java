@@ -8,6 +8,8 @@ import javax.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "Song")
 public class Song {
@@ -33,6 +35,7 @@ public class Song {
 	@JoinColumn(name ="FK_UserId")
 	private User user;
 
+	@JsonBackReference
 	@ManyToMany
 	@JoinTable(name = "songs_playlists",
 				joinColumns = { @JoinColumn(name = "song_id") },
