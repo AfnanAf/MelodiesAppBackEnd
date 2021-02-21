@@ -8,6 +8,8 @@ import javax.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "User")
 public class User {
@@ -29,6 +31,7 @@ public class User {
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="user")
 	private Set<Song> songs;
 	

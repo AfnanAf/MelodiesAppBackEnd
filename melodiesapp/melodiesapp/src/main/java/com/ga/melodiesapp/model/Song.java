@@ -36,8 +36,6 @@ public class Song {
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
 	
-	@JsonIgnore
-	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name ="FK_UserId")
 	private User user;

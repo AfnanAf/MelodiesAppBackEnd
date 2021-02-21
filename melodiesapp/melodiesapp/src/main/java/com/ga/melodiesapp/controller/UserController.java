@@ -81,9 +81,10 @@ public class UserController {
 	}
 
 	@GetMapping("/user/profile")
-	public User getProfile(@RequestBody String emailAddress) {
-		User user = dao.findByEmailAddress(emailAddress);
-		return user;
+	public User getProfile(@RequestBody User user) {
+		User user1 = dao.findByEmailAddress(user.getEmailAddress());
+		System.out.println("user "+user1);
+		return user1;
 	}
 
 	// HTTP GET REQUEST - User Delete
