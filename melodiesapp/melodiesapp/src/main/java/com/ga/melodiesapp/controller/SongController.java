@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ga.melodiesapp.dao.SongDao;
 import com.ga.melodiesapp.dao.UserDao;
 import com.ga.melodiesapp.model.Song;
+import com.ga.melodiesapp.model.User;
 
 @RestController
 public class SongController {
