@@ -11,7 +11,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="songId")
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 
 @Entity
 @Table(name = "Song")
@@ -19,7 +19,7 @@ public class Song {
 
 	@Id
 	@GeneratedValue
-	private int songId;
+	private int id;
 	
 	private String name;
 	private String image;
@@ -38,20 +38,26 @@ public class Song {
 	@JoinColumn(name ="FK_UserId")
 	private User user;
 
-	@JsonBackReference
 	@ManyToMany
 	@JoinTable(name = "songs_playlists",
 				joinColumns = { @JoinColumn(name = "song_id") },
 				inverseJoinColumns = { @JoinColumn(name = "playList_id")})
 	private Set<PlayList> playlists;
 
-	
-	public int getSongId() {
-		return songId;
+	public int getId() {
+		return id;
 	}
 
-	public void setSongId(int songId) {
-		this.songId = songId;
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Set<PlayList> getPlaylists() {
+		return playlists;
+	}
+
+	public void setPlaylists(Set<PlayList> playlists) {
+		this.playlists = playlists;
 	}
 
 	public String getName() {

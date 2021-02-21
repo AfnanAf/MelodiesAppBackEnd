@@ -10,7 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="playListId")
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 
 @Entity
 @Table
@@ -18,7 +18,7 @@ public class PlayList {
 
 	@Id
 	@GeneratedValue
-	private int playListId;
+	private int id;
 	
 	private String name;
 	private String image;
@@ -38,12 +38,13 @@ public class PlayList {
 	@ManyToMany(mappedBy="playlists")
 	private Set<Song> songs;
 
-	public int getPlayListId() {
-		return playListId;
+
+	public int getId() {
+		return id;
 	}
 
-	public void setPlayListId(int playListId) {
-		this.playListId = playListId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
