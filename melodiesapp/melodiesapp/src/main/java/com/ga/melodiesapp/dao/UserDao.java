@@ -6,8 +6,8 @@ import com.ga.melodiesapp.model.User;
 
 
 public interface UserDao extends CrudRepository<User, Integer> {
-	public User findById(int id);
+	public User findById(int userId);
 
 	public User findByEmailAddress(String emailAddress);
-
+	
 }
