@@ -31,7 +31,6 @@ public class User {
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
 	
-	@JsonBackReference
 	@OneToMany(mappedBy="user")
 	private Set<Song> songs;
 	
