@@ -80,11 +80,18 @@ public class UserController {
 		return ResponseEntity.ok(new JwtResponse(jwtToken));
 	}
 
+//	@GetMapping("/user/profile")
+//	public User getProfile(@RequestBody User user) {
+//		User user1 = dao.findByEmailAddress(user.getEmailAddress());
+//		System.out.println("user "+user1);
+//		return user1;
+//	}
+	
 	@GetMapping("/user/profile")
-	public User getProfile(@RequestBody User user) {
-		User user1 = dao.findByEmailAddress(user.getEmailAddress());
-		System.out.println("user "+user1);
-		return user1;
+	public User getProfile(@RequestBody String email) {
+		User user = dao.findByEmailAddress(email);
+		
+		return user;
 	}
 
 	// HTTP GET REQUEST - User Delete
