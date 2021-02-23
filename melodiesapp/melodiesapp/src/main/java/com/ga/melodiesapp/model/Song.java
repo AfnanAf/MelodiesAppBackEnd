@@ -1,6 +1,7 @@
 package com.ga.melodiesapp.model;
 
 import java.time.LocalDateTime;
+
 import java.util.Set;
 
 import javax.persistence.*;
@@ -13,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @Entity
 @Table(name = "Song")
 public class Song {
@@ -36,7 +37,7 @@ public class Song {
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
 	
-	@JsonBackReference
+//	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name ="FK_UserId")
 	private User user;

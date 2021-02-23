@@ -32,7 +32,7 @@ public class PlayList {
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
 	
-	@JsonBackReference
+//	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name ="FK_UserId")
 	private User user;

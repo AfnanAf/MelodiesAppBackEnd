@@ -88,7 +88,7 @@ public class UserController {
 //	}
 	
 	@GetMapping("/user/profile")
-	public User getProfile(@RequestBody String email) {
+	public User getProfile(@RequestParam String email) {
 		User user = dao.findByEmailAddress(email);
 		
 		return user;
