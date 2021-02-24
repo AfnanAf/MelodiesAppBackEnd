@@ -108,7 +108,7 @@ public class UserController {
 
 	// HTTP PUT REQUEST - User Change password
 	@PutMapping("/user/changePassword")
-	public User changePassword(@RequestBody User user, @RequestParam String currentPassword) {
+	public boolean changePassword(@RequestBody User user, @RequestParam String currentPassword) {
 		BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
 
 		User matchedUser = dao.findByEmailAddress(user.getEmailAddress());
@@ -120,17 +120,18 @@ public class UserController {
 				user.setPassword(newPassword);
 
 				dao.save(user);
-
+				return true;
 			} else {
 				System.err.println("Passwords doesn't matches");
-
+				return false;
 			}
 		} else {
 			System.err.println("User not found!, matchedUser is null ");
+			return false;
 
 		}
 
-		return user;
+	
 
 	}
 
