@@ -64,7 +64,7 @@ public class SongController {
 		return song;
 	}
 
-	// HTTP GET REQUEST - Song Edit
+	// HTTP PUT REQUEST - Song Edit
 	@PutMapping("/song/edit")
 	public Song editSong(@RequestBody Song song) {
 		dao.save(song);

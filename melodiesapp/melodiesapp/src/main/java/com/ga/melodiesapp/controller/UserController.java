@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ga.melodiesapp.config.JwtUtil;
 import com.ga.melodiesapp.dao.UserDao;
 import com.ga.melodiesapp.model.JwtResponse;
+import com.ga.melodiesapp.model.Song;
 import com.ga.melodiesapp.model.User;
 
 @RestController
@@ -86,12 +88,50 @@ public class UserController {
 //		System.out.println("user "+user1);
 //		return user1;
 //	}
-	
+
 	@GetMapping("/user/profile")
 	public User getProfile(@RequestParam String email) {
 		User user = dao.findByEmailAddress(email);
-		
+
 		return user;
+	}
+
+	// HTTP PUT REQUEST - User Edit
+	@PutMapping("/user/edit")
+	public User editUser(@RequestBody User user) {
+
+		dao.save(user);
+
+		return user;
+
+	}
+
+	// HTTP PUT REQUEST - User Change password
+	@PutMapping("/user/changePassword")
+	public User changePassword(@RequestBody User user, @RequestParam String currentPassword) {
+		BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
+
+		User matchedUser = dao.findByEmailAddress(user.getEmailAddress());
+
+		if (matchedUser != null) {
+			if (bCrypt.matches(currentPassword, matchedUser.getPassword())) {
+
+				String newPassword = bCrypt.encode(user.getPassword());
+				user.setPassword(newPassword);
+
+				dao.save(user);
+
+			} else {
+				System.err.println("Passwords doesn't matches");
+
+			}
+		} else {
+			System.err.println("User not found!, matchedUser is null ");
+
+		}
+
+		return user;
+
 	}
 
 	// HTTP GET REQUEST - User Delete
