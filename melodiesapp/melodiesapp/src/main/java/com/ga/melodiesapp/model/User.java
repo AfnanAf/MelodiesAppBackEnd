@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="userId")
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="userId")
 @Entity
 @Table(name = "User")
 public class User {
@@ -89,9 +89,9 @@ public class User {
 	public void setUpdateAt(LocalDateTime updateAt) {
 		this.updateAt = updateAt;
 	}
-	public Set<Song> getSongs() {
-		return songs;
-	}
+//	public Set<Song> getSongs() {
+//		return songs;
+//	}
 	public void setSongs(Set<Song> songs) {
 		this.songs = songs;
 	}
