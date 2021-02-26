@@ -98,11 +98,22 @@ public class UserController {
 
 	// HTTP PUT REQUEST - User Edit
 	@PutMapping("/user/edit")
-	public User editUser(@RequestBody User user) {
+	public HashMap<String, String> editUser(@RequestBody User user, @RequestParam String email) {
+		HashMap<String, String> response = new HashMap<String, String>();
+		
+		// Check the edited email is already in db or not
+		var it = dao.findAll();
+		for (User dbUser : it) {
+			if (dbUser.getEmailAddress().equals(user.getEmailAddress()) && !email.equals(user.getEmailAddress())) {
+
+				response.put("message", "this email already used");
+				return response;
+			}
+		}
 
 		dao.save(user);
-
-		return user;
+		response.put("message", "User edited successfully!");
+		return response;
 
 	}
 
@@ -130,8 +141,6 @@ public class UserController {
 			return false;
 
 		}
-
-	
 
 	}
 
