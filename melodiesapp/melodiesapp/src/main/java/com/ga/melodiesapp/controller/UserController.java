@@ -142,4 +142,13 @@ public class UserController {
 		return true;
 
 	}
+	
+	// HTTP GET REQUEST - User Index
+	@GetMapping("/user/index")
+	public Iterable<User> getUser() {
+		
+		var it = dao.findAllByUserRole("ROLE_USER");
+		
+		return it;
+	}
 }
