@@ -1,6 +1,10 @@
 package com.ga.melodiesapp.controller;
 
+import org.apache.logging.log4j.Logger;
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,12 +12,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ga.melodiesapp.dao.SongDao;
 import com.ga.melodiesapp.dao.UserDao;
 import com.ga.melodiesapp.model.Song;
 import com.ga.melodiesapp.model.User;
+
 
 @RestController
 public class SongController {
@@ -22,6 +29,7 @@ public class SongController {
 
 	@Autowired
 	private UserDao userDao;
+    private static final org.jboss.logging.Logger logger = LoggerFactory.logger(SongController.class);
 
 	// HTTP POST REQUEST - Song Add
 //	@PostMapping("/song/add/{fk_user_id}")
@@ -77,4 +85,37 @@ public class SongController {
 		dao.deleteById(id);
 		return true;
 	}
+	
+//	 @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+//	    public ResponseEntity uploadFile(@RequestParam MultipartFile file) {
+//	        logger.info(String.format("File name '%s' uploaded successfully.", file.getOriginalFilename()));
+//	        System.out.println("fiiileee "+ file);
+//	        return ResponseEntity.ok().build();
+//	    }
+//	@PostMapping(value = "/upload", produces = MediaType.APPLICATION_JSON_VALUE)
+//       public @ResponseBody String myService(@RequestBody MultipartFile file) throws Exception {
+//
+//   if (!file.isEmpty()) { 
+//
+//	   System.out.println("fiiileee "+ file);
+//	   }
+//return "some json";
+//
+//               }
+	
+	 @PostMapping(value = "/upload", produces = {MediaType.IMAGE_PNG_VALUE, "application/json"})
+	    public ResponseEntity<?> uploadImage(@RequestBody MultipartFile file) {
+		 
+	       System.out.println(file.getOriginalFilename());
+	       if(!file.isEmpty()) {
+	       
+	            String res = "Image uploaded successfully";
+	            return ResponseEntity.ok(res);
+	        } else {
+				String res = "Image is not uploaded";
+	            return ResponseEntity.ok(res);
+	        }
+	    }
+
+	
 }
