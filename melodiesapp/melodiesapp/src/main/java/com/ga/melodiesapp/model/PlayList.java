@@ -32,7 +32,6 @@ public class PlayList {
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
 	
-	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name ="FK_UserId")
 	private User user;
@@ -81,9 +80,9 @@ public class PlayList {
 		this.updateAt = updateAt;
 	}
 
-	public User getUser() {
-		return user;
-	}
+//	public User getUser() {
+//		return user;
+//	}
 
 	public void setUser(User user) {
 		this.user = user;
