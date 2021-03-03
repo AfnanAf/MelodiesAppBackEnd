@@ -29,7 +29,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#technologies">Technologies</a></li>
-        <li><a href="#relational-database-design(erd)">Relational Database Design(ERD)</a></li>
+        <li><a href="#relational-database-designerd">Relational Database Design(ERD)</a></li>
         <li><a href="#routes">Routes</a></li>
       </ul>
     </li>
