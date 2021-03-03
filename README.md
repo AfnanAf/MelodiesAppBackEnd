@@ -21,10 +21,42 @@
   </p>
 </p>
 
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#relational-database-design(erd)">Relational Database Design(ERD)</a></li>
+        <li><a href="#routes">Routes</a></li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributers">Contributers</a></li>
+  </ol>
+</details>
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 Melodies is a music app that allows the user to listen, explore and search for their music (the data will be fetched from a third-party API). And the user can click on a (heart icon) to store her/his favorite song so s/he can reach it easily. Also, there's a (plus icon) with a dropdown list so the user can add the song to one of her/his pre-created playlists. and if s/he doesn't have there's a button to redirect them to add playlist page. Also, the users can add their own custom song by filling the form if it's not in the API. The user also can delete/unfavorite, edit their song/playlist.
+
+
+### Technologies
+Here are the technologies we used building this app.
+* Spring Boot
+* Spring Security
+* Java
+* JSON Web Token
+* Rest API
+* Spring Security
+
 
 ### Relational Database Design(ERD)
 ![](image.png)
@@ -49,3 +81,13 @@ Melodies is a music app that allows the user to listen, explore and search for t
 |POST  | /playlist/add | playlist | none
 |PUT | /playlist/edit | playlist | none
 |DELETE | /playlist/delete | none | id
+
+<!-- CONTACT -->
+## Contributers
+
+Alaa Alzahrani - [LinkedIn](https://www.linkedin.com/in/alaa-alz/) - [Github](https://github.com/xloli20)
+
+Afnan Alfulaij - [LinkedIn](https://www.linkedin.com/in/afnan-alfulaij/
+) - [Github](https://git.generalassemb.ly/afnanaaf)
+
+
