@@ -53,8 +53,6 @@ Here are the technologies we used building this app.
 * Spring Security
 * Java
 * JSON Web Token
-* Rest API
-* Spring Security
 
 
 ### Relational Database Design(ERD)
