@@ -12,12 +12,13 @@
   <p align="center">
     A Music App Allows Users To Listen, Explore And Search For Their Music !
     <br />
-    <a href="https://pages.git.generalassemb.ly/xloli20/MelodiesAppFrontEnd/"><strong>Go to the app »</strong></a>
+ 
+    <a href="http://melodieswebapp-env.eba-kgzwebax.us-east-2.elasticbeanstalk.com/"><strong>Go to the API »</strong></a>
     <br />
     <br />
-    <a href="https://git.generalassemb.ly/xloli20/MelodiesAppBackEnd">Melodies App Back End</a>
+    <a href="https://git.generalassemb.ly/xloli20/MelodiesAppFrontEnd">Melodies App Front End</a>
     ·
-    <a href="http://melodieswebapp-env.eba-kgzwebax.us-east-2.elasticbeanstalk.com/">API URL</a>
+    <a href="https://pages.git.generalassemb.ly/xloli20/MelodiesAppFrontEnd/">Melodies App</a>
   </p>
 </p>
 
