@@ -6,13 +6,10 @@
   <a href="">
     <img src="public/MelodiesLogo.png" alt="Logo" width="80" height="80">
   </a>
-
   <h3 align="center">Melodies App</h3>
-
   <p align="center">
     A Music App Allows Users To Listen, Explore And Search For Their Music !
     <br />
- 
     <a href="http://melodieswebapp-env.eba-kgzwebax.us-east-2.elasticbeanstalk.com/"><strong>Go to the API »</strong></a>
     <br />
     <br />
