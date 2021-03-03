@@ -1,4 +1,3 @@
-# Melodies App Back End
 # Melodies App
 
 <!-- PROJECT LOGO -->
