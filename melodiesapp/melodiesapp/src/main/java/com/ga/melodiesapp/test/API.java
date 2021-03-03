@@ -27,6 +27,7 @@ public class API {
 		HashMap<String, String> response = new HashMap<String, String>();
 		response.put("message", "Hello " + name + " !, How are you? ");
 		response.put("course", "Java Immersive Course");
+		response.put("capstoneProjectName", "Melodies App");
 		
 		System.out.println(env.getProperty("app.name"));
 		
