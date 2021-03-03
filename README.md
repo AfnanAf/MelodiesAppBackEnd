@@ -21,10 +21,15 @@
   </p>
 </p>
 
-## Relational Database Design(ERD)
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Melodies is a music app that allows the user to listen, explore and search for their music (the data will be fetched from a third-party API). And the user can click on a (heart icon) to store her/his favorite song so s/he can reach it easily. Also, there's a (plus icon) with a dropdown list so the user can add the song to one of her/his pre-created playlists. and if s/he doesn't have there's a button to redirect them to add playlist page. Also, the users can add their own custom song by filling the form if it's not in the API. The user also can delete/unfavorite, edit their song/playlist.
+
+### Relational Database Design(ERD)
 ![](image.png)
 
-## Routes
+### Routes
 
 |Method        | Route Path            | Request Body       | Request Parameter |
 |:--         | :--             | :--         | :-- |
