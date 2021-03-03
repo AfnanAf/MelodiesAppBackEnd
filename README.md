@@ -12,13 +12,12 @@
 |PUT | /user/edit | user | email
 |PUT | /user/changePassword | user | currentPassword
 |DELETE | /user/delete | none | id
-
 |GET | /song/index | none | none 
 |POST  | /song/add | song | none
 |PUT | /song/edit | song | none
 |DELETE | /song/delete | none | id
-
-|GET | /playlist/index | none | none 
+|GET | /playlist/index | none | none
+|GET | /playlist/detail | none | id 
 |POST  | /playlist/add | playlist | none
 |PUT | /playlist/edit | playlist | none
 |DELETE | /playlist/delete | none | id
