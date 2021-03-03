@@ -58,7 +58,7 @@ Here are the technologies we used building this app.
 ### Relational Database Design(ERD)
 ![](image.png)
 
-### Routes
+### RESTful Routes
 
 |Method        | Route Path            | Request Body       | Request Parameter |
 |:--         | :--             | :--         | :-- |
